@@ -6,4 +6,5 @@ RUN tar xf /tmp/writefreely_${WF_VERSION}_linux_amd64.tar.gz -C /usr/local
 FROM debian:bullseye-slim
 COPY --from=tar /usr/local/writefreely /usr/local/writefreely
 WORKDIR /usr/local/writefreely
+ENV PATH="/usr/local/writefreely:$PATH"
 CMD [ "/usr/local/writefreely/writefreely" ]
